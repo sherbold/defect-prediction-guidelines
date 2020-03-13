@@ -18,21 +18,28 @@ These guidelines are still a work-in-progress and not all aspects are covered ye
 Within this section, we establish basic terminology, including often used synonyms.
 
 
-| Term | Description |
--------|-------------|
+| Term | Description | Notation |
+-------|-------------|----------|
 | Project | A software project that consists of well-defined scope, typically hosted in a single repository. |
-| Release | The release of a software project, e.g., version 1.0.0, version 2.1.1 |
-| Version | Often used synonymously with the term release, although version is a bit more generic and can also refer to milestones or release candidates. |
-| Artifact | The part of a software project to which defect prediction is applied. Typically a file or a class, but possibly also a commit, or even a part of a commit. |
+| Release | The release of a software project, e.g., version 1.0.0, version 2.1.1 | S |
+| Version | Often used synonymously with the term release, although version is a bit more generic and can also refer to milestones or release candidates. | S |
+| Artifact | The part of a software project to which defect prediction is applied. Typically a file or a class, but possibly also a commit, or even a part of a commit. | s &isin; S|
 | Defect / Bug / Fault | An imperfection or deficiency in a work product where it does not meet its requirements or specifications. Source: [ISTQB Glossary] |
 | Pre-release Defect  | A defect that was found and fixed prior to a release. |
 | Post-release Defect | A defect that was found and fixed after the software released. |
-| Binary Classifier | |
-| Scoring Classifier | |
-| Feature |  |
-| Training Data | |
+| Feature | A measurement of related to an artifact that is used as input for a classifier and the foundation for a prediction. |
+| Feature set | A collection of measurements for software artifacts. |
+| Feature space | A (usually) real-valued space that is defined by the measurements of artifacts according to the feature set. |
+| Binary Label | The label assigned to artifacts depending on whether artifact is defective or not. | {True, False}  |
+| Defect Count | An integer version of the label that assigns the number of defects as the label. |  |
+| Binary Classifier | A classifier that predicts if an artifact is defective or not. |  |
+| Scoring Classifier | A classifier that predicts a score for each artifact and can rank artifacts by their scores. |
+| Threshold | A fixed value used to transform the scores of a scoring classifier into binary labels, i.e., to make a scoring classifier into a binary classifier. All artifacts with values above the threshold are predicted as defective. |
+| Training Data |  |
 | Validation Data | |
 | Test Data | |
+
+(1): Sometimes also {+1, -1} if this is relevant for the definition of loss function of the learning problem. 
 
 # Taxonomy
 
